@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11/ace.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11/mode-yaml.min.js"></script>
+    <style>
+        .sidebar {
+            height: calc(100vh - 8rem);
+            position: sticky;
+        }
+        #editor { 
+        position: relative;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: calc(100vh - 12rem)
+    }   
+    </style>
+</head>
+<body>
+    <div class="container-fluid ">
+        <div class="border-bottom">
+            <h1 > Yaml editor Demo</h1>
+        </div>
+        <div class="row flex-xl-nowrap">
+            <div class="col-md-3 sidebar border-right p-3">
+                <p class="font-weight-bold border-bottom">YAMLs list</p>
+                <ul id="yamlList">
+
+                </ul>
+            </div>
+            <div class="editor-wrapper col-8 p-3">
+                <form id="yamlGenerator" action="" onsubmit="createYaml(); return false">
+                    <input type="hidden" id="itemId" value=""></input>
+                    <input type="text" class="form-control mb-2" placeholder="File title" id="file-title" required>
+                    <div class="card" id="editor"> editor</div>
+                    <div class="row d-flex align-items-end flex-column mt-2">
+                        <button type="submit" id="actionBtn" class="btn-primary btn">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="editor.js"></script>
+</body>
+</html>
